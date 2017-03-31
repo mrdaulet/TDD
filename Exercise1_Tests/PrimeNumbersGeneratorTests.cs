@@ -22,6 +22,7 @@ namespace Exercise1_Tests
 
         [Test]
         [TestCase(3, new [] { 2 })]
+        [TestCase(4, new [] { 2, 3 })]
         public void GivenUpperBound_ReturnsCorrectPrimes(int n, IEnumerable<int> primes)
         {
             Assert.That(GenerateNumbers(n), Is.EquivalentTo(primes));

@@ -5,19 +5,32 @@ namespace Exercise1
 {
     public class PrimeNumbersGenerator
     {
-        public IEnumerable<int> Generate(int n)
+        public IEnumerable<int> Generate(int upperBound)
         {
-            if (n < 0)
+            if (upperBound < 0)
             {
                 throw new ArgumentOutOfRangeException();
             }
 
-            if (n > 2)
+            var primes = new List<int>();
+            for (int number = 2; number < upperBound; number++)
             {
-                return new[] {2};
+                bool divisible = false;
+                for (int divisor = 2; divisor < number; divisor++)
+                {
+                    if (number % divisor == 0)
+                    {
+                        divisible = true;
+                        break;
+                    }
+                }
+                if (!divisible)
+                {
+                    primes.Add(number);
+                }
             }
 
-            return new int[] {};
+            return primes;
         }
     }
 }
