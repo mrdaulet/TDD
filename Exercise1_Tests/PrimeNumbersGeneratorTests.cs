@@ -21,6 +21,12 @@ namespace Exercise1_Tests
         }
 
         [Test]
+        public void GivenMoreThanThousand_Throws()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => GenerateNumbers(1001));
+        }
+
+        [Test]
         [TestCase(3, new [] { 2 })]
         [TestCase(4, new [] { 2, 3 })]
         [TestCase(6, new [] { 2, 3, 5 })]

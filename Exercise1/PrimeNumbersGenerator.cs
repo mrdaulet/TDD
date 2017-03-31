@@ -7,7 +7,7 @@ namespace Exercise1
     {
         public IEnumerable<int> Generate(int upperBound)
         {
-            if (upperBound < 0)
+            if (upperBound < 0 || upperBound > 1000)
             {
                 throw new ArgumentOutOfRangeException();
             }
